@@ -1,0 +1,31 @@
+<!-- Directives -->
+<!-- 
+    -built in 
+    -attributi => ngStyle - ngClass
+    -strutturali => modificano struttura del DOM (*ngIf - *ngFor)
+-->
+
+<!-- Strutturali -->
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <p *ngIf="!isHidden; then bloccoVisibile else bloccoNonVisibile"></p>
+            <ng-template #bloccoVisibile>
+                <h1>Sono Visibile</h1>
+            </ng-template>
+            <ng-template #bloccoNonVisibile>
+                <h5>Non Sono Visibile</h5>
+            </ng-template>
+        </div>
+<!-- Attributi -->
+        <div class="col-4">
+            <ng-container *ngFor="let persona of persone">
+                <div class="box-person d-flex">
+                    <h5>{{persona.name}} - {{persona.surname}}</h5>
+                    <div [ngClass]="persona.isOnline ? 'circleGreen' : 'circleRed'"></div>
+                </div>
+            </ng-container>
+        </div>
+
+    </div>
+</div>

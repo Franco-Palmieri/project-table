@@ -1,0 +1,17 @@
+<div style="border: 1px solid blue; padding: 10px;">
+    <h4>Child</h4>
+    <div *ngFor="let country of countriesChild">
+        <ng-container [ngSwitch]="country.continent">
+            <div *ngSwitchCase="'Europe'">
+                <h5>{{country.name}}</h5>
+            </div>
+            <div *ngSwitchCase="'South America'">
+                <h5>{{country.name}}</h5>
+            </div>
+        </ng-container>
+    </div>
+    <!-- Passare dati dal child al parent tramite un evento -->
+    <button (click)="sendCountry()" >
+        Invia Paese Nuovo
+    </button>
+</div>

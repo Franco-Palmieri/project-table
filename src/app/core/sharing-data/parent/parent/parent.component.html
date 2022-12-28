@@ -1,0 +1,17 @@
+<div class="container" style="border: 1px solid red; padding: 10px;">
+    <h3>Parent</h3>
+    <p>Countries</p>
+    <ng-container *ngFor="let country of countries">
+        <h4> {{country.name}} </h4>
+    </ng-container>
+<!-- Invio tramite una variabile con decoratore input nel component child i dati del parent -->
+<app-child 
+    [countriesChild]="countries"
+    (onSendingData)="newData($event)"
+    >
+    <!-- Per ricevere i dati dal child collego nelle tonde 
+    la funzione di tipo EventEmitter (non il click) che si trova nel child -->
+</app-child>
+
+<button (click)="changeNames()" style="margin: 10px 0;">Change Names</button>
+</div>

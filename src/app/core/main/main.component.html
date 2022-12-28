@@ -1,0 +1,53 @@
+<div class="container" style="margin-bottom: 50px;">
+    <div class="row">
+      <div class="col-2">
+        <!-- String Interpolation -->
+        <!-- collego le stringhe alla variabile tramite parentesi graffe {{}} -->
+        
+        <!-- <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{ dogs[0].name.toUpperCase() }}</h5>
+              <p class="card-text">{{ dogs[0].description }}</p>
+              <a href="" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div> -->
+
+        <!-- Property Interpolation -->
+        <!-- collego la proprietà alla variabile nel ts tramite parentesi quadre [] -->
+        <!-- <button type="button" class="btn btn-primary col-2" [disabled]="isDisabled">Primary</button> -->
+        
+          <div class="card" style="width: 18rem;" *ngIf="flagCard">
+            <img class="card-img-top" [src]="dogImage" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{ dogs[0].name.toUpperCase() }}</h5>
+              <p class="card-text">{{ dogs[0].description }}</p>
+              <a href="" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+        <!-- Event Binding  -->
+        <label for="exampleInputEmail1">Ricerca</label>
+        <input 
+            type="text" 
+            class="form-control" 
+            id="exampleInputEmail1" 
+            placeholder="Ricerca Nome"
+            (input)="onWrite($event)"
+        >
+
+        <!-- Two Way Binding -->
+        <!-- Modifico il titolo nel tag <p> e nell'input grazie al ngModel collegato alla variabile title. -->
+        <button type="button" class="btn btn-primary" (click)="onClick()">Primary</button>
+        <input 
+        type="text" 
+        class="form-control" 
+        id="exampleInputTitle" 
+        placeholder="Enter Title"
+        (input)="changeTitle($event)"
+        [(ngModel)]="title"
+        />
+        <p>{{ title.toUpperCase() }}</p>
+      </div>
+    </div>
+</div>

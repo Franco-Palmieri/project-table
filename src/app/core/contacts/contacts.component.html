@@ -1,0 +1,14 @@
+<div class="container">
+    <div *ngIf="!isProfile; else profile;">
+        <h1>Lista Contatti</h1>
+        <div *ngFor="let contact of contacts">
+            <div (click)="goToProfile(contact.id)">{{contact.name}} - {{contact.surname}}</div>
+        </div>
+    </div>
+
+    <ng-template #profile>
+        <div>
+            Ciao {{contact.name}}
+        </div>
+    </ng-template>
+</div>
