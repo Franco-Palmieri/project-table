@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+        <div class="box-list col-6">
+            <h1>Lista Persone</h1>
+            <div *ngFor="let persona of persone">
+                <div (click)="goToProfile(persona.id)">{{persona.name}} - {{persona.surname}}</div>
+            </div>
+        </div>
+    </div>
+    <router-outlet> </router-outlet>
+</div>

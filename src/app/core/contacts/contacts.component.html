@@ -7,8 +7,6 @@
     </div>
 
     <ng-template #profile>
-        <div>
-            Ciao {{contact.name}}
-        </div>
+        <app-contact-children [contactChildren]="contact"></app-contact-children>
     </ng-template>
 </div>

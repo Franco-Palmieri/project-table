@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { ContactChildrenComponent } from './core/contact-children/contact-children.component';
 import { ContactsComponent } from './core/contacts/contacts.component';
 import { DirectivesComponent } from './core/directives/directives.component';
 import { HomeComponent } from './core/home/home.component';
 import { MainComponent } from './core/main/main.component';
 import { PipeFunctionsComponent } from './core/pipe-functions/pipe-functions.component';
+import { RouteChildrenComponent } from './core/route-children/route-children/route-children.component';
+import { RouteParentComponent } from './core/route-children/route-parent/route-parent.component';
 import { SharingComponent } from './core/sharing-data/sharing/sharing/sharing.component';
 import { VarTemplateComponent } from './core/var-template/var-template.component';
 
@@ -17,7 +20,16 @@ const routes: Routes = [
   {path: 'sharing', component: SharingComponent},
   {path: 'var-template', component: VarTemplateComponent},
   {path: 'contacts', component: ContactsComponent},
-  {path: 'contacts/:id', component: ContactsComponent},
+  /**
+  * Rotta con Params
+  */
+ {path: 'contacts/:id', component: ContactsComponent},
+  /**
+  * Rotta con Children
+  */
+ {path: 'route-parent', component: RouteParentComponent, children: [
+  {path: ':id', component: RouteChildrenComponent}
+ ]}
 ];
 
 @NgModule({

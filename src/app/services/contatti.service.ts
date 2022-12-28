@@ -10,27 +10,32 @@ export class ContattiService {
     {
       id: 1,
       name: 'Francesco',
-      surname: 'Palmieri'
+      surname: 'Palmieri',
+      color: 'blue'
     },
     {
       id: 2,
       name: 'Giacomo',
-      surname: 'Verdi'
+      surname: 'Verdi',
+      color: 'red'
     },
     {
       id: 3,
       name: 'Valerio',
-      surname: 'Rossi'
+      surname: 'Rossi',
+      color: 'green'
     },
     {
       id: 4,
       name: 'Pino',
-      surname: 'Rauti'
+      surname: 'Rauti',
+      color: 'black'
     },
     {
       id: 5,
       name: 'Enrico',
-      surname: 'Berlinguer'
+      surname: 'Berlinguer',
+      color: 'red'
     },
   ];
   persona: any;
