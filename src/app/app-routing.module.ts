@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { AuthGuard } from './auth/auth.guard';
 import { ContactChildrenComponent } from './core/contact-children/contact-children.component';
 import { ContactsComponent } from './core/contacts/contacts.component';
 import { DirectivesComponent } from './core/directives/directives.component';
@@ -27,9 +28,16 @@ const routes: Routes = [
   /**
   * Rotta con Children
   */
- {path: 'route-parent', component: RouteParentComponent, children: [
-  {path: ':id', component: RouteChildrenComponent}
- ]}
+//  {path: 'route-parent', component: RouteParentComponent, children: [
+//   {path: ':id', component: RouteChildrenComponent}
+//  ]}
+ /**
+  * Rotta con Routing Guard
+  * (Il componente si attiva solo se AuthGuard ci restituisce True)
+  */
+  {path: 'route-parent', component: RouteParentComponent, canActivate: [AuthGuard], canActivateChild: [AuthGuard], children: [
+    {path: ':id', component: RouteChildrenComponent}
+  ]},
 ];
 
 @NgModule({
