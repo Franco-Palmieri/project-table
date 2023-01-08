@@ -7,6 +7,7 @@ import { ContactsComponent } from './core/contacts/contacts.component';
 import { DirectivesComponent } from './core/directives/directives.component';
 import { HomeComponent } from './core/home/home.component';
 import { MainComponent } from './core/main/main.component';
+import { ObservableComponent } from './core/observable/observable/observable.component';
 import { PipeFunctionsComponent } from './core/pipe-functions/pipe-functions.component';
 import { RouteChildrenComponent } from './core/route-children/route-children/route-children.component';
 import { RouteParentComponent } from './core/route-children/route-parent/route-parent.component';
@@ -28,16 +29,17 @@ const routes: Routes = [
   /**
   * Rotta con Children
   */
-//  {path: 'route-parent', component: RouteParentComponent, children: [
-//   {path: ':id', component: RouteChildrenComponent}
-//  ]}
- /**
+  // {path: 'route-parent', component: RouteParentComponent, children: [
+  //  {path: ':id', component: RouteChildrenComponent}
+  // ]}
+  /**
   * Rotta con Routing Guard
   * (Il componente si attiva solo se AuthGuard ci restituisce True)
   */
   {path: 'route-parent', component: RouteParentComponent, canActivate: [AuthGuard], canActivateChild: [AuthGuard], children: [
     {path: ':id', component: RouteChildrenComponent}
   ]},
+  {path: 'observables', component: ObservableComponent}
 ];
 
 @NgModule({

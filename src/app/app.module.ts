@@ -14,6 +14,7 @@ import { HomeComponent } from './core/home/home.component';
 import { NavDirettivaDirective } from './direttive/nav-direttiva.directive';
 import { ContactsModule } from './core/contacts/contacts/contacts.module';
 import { RouteParentModule } from './core/route-children/route-parent/route-parent/route-parent.module';
+import { ObservableModule } from './core/observable/observable/observable/observable.module';
 
 
 
@@ -35,7 +36,8 @@ import { RouteParentModule } from './core/route-children/route-parent/route-pare
     VarTemplateModule,
     PipeFunctionsModule,
     ContactsModule,
-    RouteParentModule
+    RouteParentModule,
+    ObservableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
