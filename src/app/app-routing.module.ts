@@ -9,9 +9,11 @@ import { HomeComponent } from './core/home/home.component';
 import { MainComponent } from './core/main/main.component';
 import { ObservableComponent } from './core/observable/observable/observable.component';
 import { PipeFunctionsComponent } from './core/pipe-functions/pipe-functions.component';
+import { ReactiveFormComponent } from './core/reactive-form/reactive-form.component';
 import { RouteChildrenComponent } from './core/route-children/route-children/route-children.component';
 import { RouteParentComponent } from './core/route-children/route-parent/route-parent.component';
 import { SharingComponent } from './core/sharing-data/sharing/sharing/sharing.component';
+import { TemplateDrivenComponent } from './core/template-driven/template-driven.component';
 import { VarTemplateComponent } from './core/var-template/var-template.component';
 
 const routes: Routes = [
@@ -39,7 +41,9 @@ const routes: Routes = [
   {path: 'route-parent', component: RouteParentComponent, canActivate: [AuthGuard], canActivateChild: [AuthGuard], children: [
     {path: ':id', component: RouteChildrenComponent}
   ]},
-  {path: 'observables', component: ObservableComponent}
+  {path: 'observables', component: ObservableComponent},
+  {path: 'template-driven', component: TemplateDrivenComponent},
+  {path: 'reactive-form', component: ReactiveFormComponent}
 ];
 
 @NgModule({
