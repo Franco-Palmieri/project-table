@@ -1,16 +1,14 @@
 <app-navbar></app-navbar>
-<!-- <div class="container">
-    <h1>String Interpolation</h1>
-    <app-main></app-main>
-    <h1>Directives</h1>
-    <app-directives></app-directives>
-    <h1>Data Sharing & Services</h1>
-    <app-sharing></app-sharing>
-    <h1>Var Template</h1>
-    <app-var-template></app-var-template>
-</div> -->
-
 <router-outlet> </router-outlet>
+<app-switch-lang>
+
+</app-switch-lang>
+<div>
+  <div style="font-size: 40px">
+    <p>{{'prova.ciao' | translate}}</p>
+    <p>{{'welcomeMessagge' | translate}}</p>
+  </div>
+</div>
 <!-- <div class="container">
     <app-pipe-functions></app-pipe-functions>
 </div> -->

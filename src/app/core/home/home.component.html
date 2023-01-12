@@ -1,12 +1,12 @@
 <!-- Direttive Custom -->
 <div class="container">
     <h1>Direttive Custom</h1>
-    
+
     <h5>
         Scegli il colore del paragrafo
     </h5>
-    <!-- 
-        La funzione changeColorRadio riceve in ingresso 
+    <!--
+        La funzione changeColorRadio riceve in ingresso
         il colore da assegnare alla variabile colorCustom
     -->
     <div>
@@ -14,15 +14,16 @@
         <input type="radio" name="colorInput" (click)="changeColorRadio('pink')">Rosa
         <input type="radio" name="colorInput" (click)="changeColorRadio('blue')">Blue
     </div>
-    
+
     <form>
         <!-- Funzione changeColorForm utilizzata con ViewChild -->
         <input type="text" #formInput name="colorForm" placeholder="Inserisci Colore">
         <button type="submit" (click)="changeColorForm()">Invio</button>
     </form>
-    <!-- 
+    <!--
         il selettore è esso stesso la proprietà in input.
         colorCustom è inizializzato nel component.ts
     -->
     <p [appDirettiva]="colorCustom" defaultColor="yellow">Ciao sono una direttiva custimizzata</p>
 </div>
+

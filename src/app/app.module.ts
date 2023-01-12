@@ -17,6 +17,11 @@ import { RouteParentModule } from './core/route-children/route-parent/route-pare
 import { ObservableModule } from './core/observable/observable/observable/observable.module';
 import { TemplateDrivenModule } from './core/template-driven/template-driven/template-driven.module';
 import { ReactiveFormModule } from './core/reactive-form/reactive-form/reactive-form.module';
+// import ngx-translate and the http loader
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {SwitchLangModule} from "./core/switch-lang/switch-lang/switch-lang.module";
 
 
 
@@ -43,8 +48,22 @@ import { ReactiveFormModule } from './core/reactive-form/reactive-form/reactive-
     TemplateDrivenModule,
     ReactiveFormsModule,
     ReactiveFormModule,
+    HttpClientModule,
+    SwitchLangModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http);
+}
